@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title:
+  age:
+  phone:
+  email: email1@email.com
+  person: one
+
+two:
+  title: Dr
+  age: 50
+  phone: (902) 597-6407
+  email: email2@email.com
+  person: two
