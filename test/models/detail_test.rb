@@ -1,7 +1,7 @@
 require "test_helper"
 
 class DetailTest < ActiveSupport::TestCase
-  def setup = @subject = Detail.new(email: 'whatever@email.com', person: people(:one))
+  def setup = @subject = Detail.new(email: 'any@email.com', person: people(:one))
 
   def test_belongs_to_person = assert_respond_to(@subject, :person)
 

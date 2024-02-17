@@ -5,3 +5,13 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+return if Rails.env.test?
+
+puts "Starting importing initial..."
+
+begin
+  Importers::InitialDbJsonImporter.call
+  puts "importing initial done!..."
+rescue => error
+  puts "importing initial fails. Error: #{error.message}"
+end
