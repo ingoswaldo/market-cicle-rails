@@ -1,0 +1,22 @@
+<h1>People</h1>
+
+<%= turbo_frame_tag :new_person do %>
+  <%= render 'people/new_person_link' %>
+<% end %>
+
+<div class="two-columns">
+  <div class="list">
+    <% if @people.blank? %>
+        <h2>Master</h2>
+    <% else %>
+      <%= turbo_frame_tag :people do %>
+        <% @people.each do |person| %>
+          <%= render person %>
+        <% end %>
+      <% end %>
+    <% end %>
+  </div>
+  <div id="person-details-content" class="list">
+    <h2>Click on one person to see details</h2>
+  </div>
+</div>

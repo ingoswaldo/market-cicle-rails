@@ -1,0 +1,5 @@
+<% if @detail.present? %>
+  <%= render @detail %>
+<% else %>
+  <h2>There is no details for the person: <%= @person.name %></h2>
+<% end %>

@@ -1,0 +1,41 @@
+<%= form_with(model: person) do |form| %>
+  <% if person.errors.any? %>
+    <div style="color: red">
+      <h5><%= pluralize(person.errors.count, "error") %> prohibited this master from being saved:</h5>
+
+      <ul>
+        <% person.errors.each do |error| %>
+          <li>
+            <h5><%= error.full_message %></h5>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :name, style: "display: block" %>
+    <%= form.text_field :name %>
+  </div>
+
+  <%= form.fields_for :detail do |detail_form| %>
+    <div>
+      <%= detail_form.label :email, style: "display: block" %>
+      <%= detail_form.email_field :email %>
+    </div>
+
+    <div>
+      <%= detail_form.label :title, style: "display: block" %>
+      <%= detail_form.text_field :title %>
+    </div>
+
+    <div>
+      <%= detail_form.label :phone, style: "display: block" %>
+      <%= detail_form.text_field :phone %>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

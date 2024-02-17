@@ -1,0 +1,9 @@
+<%= turbo_frame_tag :new_person do %>
+  <%= render "form", person: @person %>
+
+  <br>
+
+  <div>
+    <%= link_to "Exit", people_path %>
+  </div>
+<% end %>

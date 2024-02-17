@@ -13,3 +13,24 @@
  *= require_tree .
  *= require_self
  */
+.two-columns {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    height: 85svh;
+}
+
+.list {
+    display: grid;
+    padding: 1em;
+    border-style: solid;
+    border-color: #7c7c7c;
+    align-content: center;
+}
+
+.margin-y-1 {
+    margin: 1em 0;
+}
+
+.flash-message {
+    color: green;
+}

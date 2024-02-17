@@ -1,0 +1,9 @@
+<div id="<%= dom_id person %>">
+  <h2>
+    <%= link_to person.name, '#', { data: { controller: 'people', action: 'people#loadDetails', 'people-person-id-value': person.id }} %>
+    <%= turbo_frame_tag :edit_person do %>
+      <%= link_to "Edit", edit_person_path(person) %>
+    <% end %>
+    <%= link_to "Delete", person, data: { turbo_method: :delete } %>
+  </h2>
+</div>
