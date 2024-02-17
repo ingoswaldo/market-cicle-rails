@@ -11,14 +11,14 @@ module People
     def test_creates_person_with_valid_attr = assert @creator.call(valid_person_attr).present?
 
     def test_creates_person_with_valid_details_attr
-      person = @creator.call(valid_person_attr.merge({ details_attributes: [valid_details_attr] }))
+      person = @creator.call(valid_person_attr.merge({ detail_attributes: valid_details_attr }))
       assert person.present?
     end
 
     def test_does_not_create_person_with_invalid_attr = assert_not @creator.call(invalid_person_attr).valid?
 
     def test_does_not_create_person_with_invalid_details_attr
-      person = @creator.call(valid_person_attr.merge({ details_attributes: [invalid_details_attr] }))
+      person = @creator.call(valid_person_attr.merge({ detail_attributes: invalid_details_attr }))
       assert_not person.valid?
     end
 

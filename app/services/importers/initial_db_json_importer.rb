@@ -15,7 +15,7 @@ module Importers
 
     def transform_json_data_keys
       @json_data.map! do |element|
-        element['details_attributes'] = [element.delete('info')]
+        element['detail_attributes'] = element.delete('info')
         element
       end
     end

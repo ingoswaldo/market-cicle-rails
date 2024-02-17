@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
 class Person < ApplicationRecord
-  has_many :details, dependent: :destroy
+  has_one :detail, dependent: :destroy
 
-  accepts_nested_attributes_for :details
+  accepts_nested_attributes_for :detail
 
   validates :name, presence: true
 
