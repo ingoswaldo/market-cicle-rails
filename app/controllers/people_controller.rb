@@ -16,10 +16,10 @@ class PeopleController < ApplicationController
   def edit; end
 
   def create
-    @person = Person.new(person_params)
+    @person = People::Creator.call(person_params)
 
     respond_to do |format|
-      return format.turbo_stream { flash.now[:notice] = "Person was successfully created." } if @person.save
+      return format.turbo_stream { flash.now[:notice] = "Person was successfully created." } if @person.persisted?
 
       format.html { render :new, status: :unprocessable_entity }
     end
